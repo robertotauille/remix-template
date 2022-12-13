@@ -24,7 +24,7 @@ async function main({ rootDirectory }) {
   figlet.text(
     "Sysgaming",
     {
-      font: "ANSI Shadow",
+      font: "Small",
       horizontalLayout: "default",
       verticalLayout: "default",
       width: 50,
