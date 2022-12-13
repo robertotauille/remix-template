@@ -1,34 +1,47 @@
-import { prompt } from "inquirer";
-import { text } from "figlet";
-import { green, blue, magenta } from "chalk";
-
+import chalk from "chalk";
 import clear from "clear";
+import inquirer from "inquirer";
+import figlet from "figlet";
 
 clear();
 
-prompt([
-  {
-    name: "projectName",
-    message: "Qual é o nome do projeto?",
-  },
-  {
-    name: "restApiUrl",
-    message: "Qual é o endpoint da API REST?",
-  },
-  {
-    name: "graphqlApiUrl",
-    message: "Qual é o endpoint da API Graphql?",
-  },
-]).then((answers) => {
-  text("Sysgaming", {
-    font: "ANSI Shadow",
-    horizontalLayout: "default",
-    verticalLayout: "default",
-    width: 80,
-    whitespaceBreak: true,
-  });
+inquirer
+  .prompt([
+    {
+      name: "projectName",
+      message: "Qual é o nome do projeto?",
+    },
+    {
+      name: "restApiUrl",
+      message: "Qual é o endpoint da API REST?",
+    },
+    {
+      name: "graphqlApiUrl",
+      message: "Qual é o endpoint da API Graphql?",
+    },
+  ])
+  .then((answers) => {
+    figlet.text(
+      "Sysgaming",
+      {
+        font: "ANSI Shadow",
+        horizontalLayout: "default",
+        verticalLayout: "default",
+        width: 80,
+        whitespaceBreak: true,
+      },
 
-  console.info("Nome do projeto:", green(answers.projectName));
-  console.info("API REST:", blue(answers.restApiUrl));
-  console.info("API Graphql:", magenta(answers.restApiUrl));
-});
+      function (err, data) {
+        if (err) {
+          console.log("😵 Ops.. algo saiu mal.");
+          return;
+        }
+
+        console.log(chalk.blue(data));
+
+        console.log("Nome do projeto:", chalk.green(answers.projectName));
+        console.log("API REST:", chalk.cyan(answers.restApiUrl));
+        console.log("API Graphql:", chalk.magenta(answers.restApiUrl));
+      }
+    );
+  });
