@@ -1,53 +1,74 @@
-# Welcome to Remix!
+# Sysgaming Game Remix Template
 
-- [Remix Docs](https://remix.run/docs)
+Pacotes inclusos:
 
-## Development
+- [Remix](https://github.com/remix-run/remix)
+- [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss)
+- [Headless UI](https://github.com/tailwindlabs/headlessui)
+- [Hero Icons](https://github.com/tailwindlabs/heroicons)
+- [Recoil](https://github.com/facebookexperimental/Recoil)
+- [Recoil persist](https://github.com/polemius/recoil-persist)
+- [Graphql Request Hybrid](https://github.com/valmirphp/graphql-client-hybrid)
+- [Remix Utils](https://github.com/sergiodxa/remix-utils)
 
-From your terminal:
+## Antes de você começar
 
-```sh
-npm run dev
+...
+
+## Como usar o template?
+
+Para iniciar um novo projeto apartir do do template basta copiar o comando abaixo e executar no terminal.
+
+`npx create-remix@latest --template robertotauille/remix-template`
+
+ou caso queira, podes passar o nome do projeto junto ao comando como no exemplo abaixo:
+
+`npx create-remix@latest --template robertotauille/remix-template NOMEDOPROJETO`
+
+Após executar o comando será solicitado alguns dados essencias para a criação correta do projeto, acredite é bem simples. 😉
+
+## Estrutura de arquivos do projeto
+
+```
+### top-level directory
+
+    .
+    ├── public                   # Pasta para arquivos públicos
+    ├── src                      # Pasta de código-fonte (principal do projeto)
+    └── README.md
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+```
+### src
 
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
+    .
+    ├── ...
+    ├── common                   # ...
+    │   ├── assets               #
+    │   ├── components           #
+		│   ├── hooks                #
+		│   ├── state                #
+    │   └── utils                #
+    ├── features                 #
+    │   └── Layout               #
+    ├── routes                   #
+    │   ├── assets               #
+    │   └── utils                #
+    ├── server                   #
+    │   ├── assets               #
+    │   └── utils                #
+    └── ...
 ```
 
-Then run the app in production mode:
+## Scripts
 
-```sh
-npm start
-```
+...
 
-Now you'll need to pick a host to deploy it to.
+## Features
 
-### DIY
+Um rápido resumo dos principais recursos:
 
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+- Feature 1
+  - ...
+- Feature 2
+  - ...
