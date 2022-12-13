@@ -2,6 +2,7 @@ const clear = require("clear");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const figlet = require("figlet");
+const spinner = require("cli-spinners");
 
 async function main({ rootDirectory }) {
   clear();
@@ -20,6 +21,8 @@ async function main({ rootDirectory }) {
       message: "Qual é o endpoint da API Graphql?",
     },
   ]);
+
+  console.log(spinner.bouncingBar);
 
   figlet.text(
     "Sysgaming",
