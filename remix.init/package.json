@@ -5,6 +5,6 @@
   "author": "Roberto Tauille",
   "license": "MIT",
   "dependencies": {
-    "inquirer": "^9.1.4"
+    "inquirer": "^8.0.0"
   }
 }

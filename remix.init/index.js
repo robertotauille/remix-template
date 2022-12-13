@@ -1,6 +1,23 @@
+const inquirer = require("inquirer");
+
 async function main({ rootDirectory }) {
+  const answers = await inquirer.prompt([
+    {
+      name: "projectName",
+      message: "Qual é o nome do projeto?",
+    },
+    {
+      name: "restApiUrl",
+      message: "Qual é o endpoint da API REST?",
+    },
+    {
+      name: "graphqlApiUrl",
+      message: "Qual é o endpoint da API Graphql?",
+    },
+  ]);
+
   console.log(rootDirectory);
-  console.log("mahhHhh oe!");
+  console.log(answers);
 }
 
 module.exports = main;
