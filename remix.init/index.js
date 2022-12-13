@@ -1,4 +1,4 @@
-const inquirer = require("inquirer");
+import inquirer from "inquirer";
 
 async function main({ rootDirectory }) {
   const answers = await inquirer.prompt([
@@ -20,4 +20,4 @@ async function main({ rootDirectory }) {
   console.log(answers);
 }
 
-module.exports = main;
+export default main;
