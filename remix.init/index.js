@@ -27,7 +27,7 @@ async function main({ rootDirectory }) {
       font: "ANSI Shadow",
       horizontalLayout: "default",
       verticalLayout: "default",
-      width: 80,
+      width: 50,
       whitespaceBreak: true,
     },
     (err, data) => {
@@ -35,16 +35,18 @@ async function main({ rootDirectory }) {
         console.log("😵 Ops.. algo saiu mal.");
         return;
       }
-      console.log(chalk.blue(data));
+      clear();
+
+      console.log(" ");
+      console.log(chalk.cyan(data));
 
       console.log("Nome do projeto:", chalk.green(answers.projectName));
-      console.log("API REST:", chalk.cyan(answers.restApiUrl));
+      console.log("API REST:", chalk.blue(answers.restApiUrl));
       console.log("API Graphql:", chalk.magenta(answers.restApiUrl));
+
+      console.log(" ");
     }
   );
-
-  console.log(rootDirectory);
-  console.log(answers);
 }
 
 module.exports = main;
