@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 
-const main = async ({ rootDirectory }) => {
+async function main({ rootDirectory }) {
   const answers = await inquirer.prompt([
     {
       name: "projectName",
@@ -18,6 +18,6 @@ const main = async ({ rootDirectory }) => {
 
   console.log(rootDirectory);
   console.log(answers);
-};
+}
 
 module.exports = main;
