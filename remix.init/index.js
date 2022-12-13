@@ -35,6 +35,7 @@ async function main({ rootDirectory }) {
         console.log("😵 Ops.. algo saiu mal.");
         return;
       }
+
       clear();
 
       console.log(" ");
@@ -52,7 +53,5 @@ async function main({ rootDirectory }) {
     }
   );
 }
-
-main({ rootDirectory: process.cwd() });
 
 module.exports = main;
