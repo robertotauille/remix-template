@@ -1,7 +1,12 @@
-import chalk from "chalk";
-import clear from "clear";
-import inquirer from "inquirer";
-import figlet from "figlet";
+// import chalk from "chalk";
+// import clear from "clear";
+// import inquirer from "inquirer";
+// import figlet from "figlet";
+
+const chalk = require("chalk");
+const clear = require("clear");
+const figlet = require("figlet");
+const inquirer = require("inquirer");
 
 clear();
 
