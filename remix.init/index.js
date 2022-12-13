@@ -2,7 +2,6 @@ const clear = require("clear");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const figlet = require("figlet");
-const spinner = require("cli-spinners");
 
 async function main({ rootDirectory }) {
   clear();
@@ -22,8 +21,6 @@ async function main({ rootDirectory }) {
     },
   ]);
 
-  console.log(spinner.bouncingBar);
-
   figlet.text(
     "Sysgaming",
     {
@@ -42,7 +39,11 @@ async function main({ rootDirectory }) {
 
       console.log(" ");
       console.log(chalk.cyan(data));
+      console.log(" ");
+      console.log(" ");
 
+      console.log("✅ Projeto criado com sucesso!");
+      console.log(" ");
       console.log("Nome do projeto:", chalk.green(answers.projectName));
       console.log("API REST:", chalk.blue(answers.restApiUrl));
       console.log("API Graphql:", chalk.magenta(answers.restApiUrl));
@@ -51,5 +52,7 @@ async function main({ rootDirectory }) {
     }
   );
 }
+
+main({ rootDirectory: process.cwd() });
 
 module.exports = main;
