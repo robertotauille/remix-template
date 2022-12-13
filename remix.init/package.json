@@ -5,6 +5,8 @@
   "author": "Roberto Tauille",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.0.0",
+    "clear": "^0.1.0",
     "inquirer": "^8.0.0"
   }
 }
