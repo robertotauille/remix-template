@@ -1,56 +1,53 @@
 // import chalk from "chalk";
-// import clear from "clear";
-// import inquirer from "inquirer";
-// import figlet from "figlet";
+import clear from "clear";
+import inquirer from "inquirer";
+import figlet from "figlet";
 
-const chalk = require("chalk");
 // const clear = require("clear");
-const figlet = require("figlet");
-const inquirer = require("inquirer");
+// const figlet = require("figlet");
+// const inquirer = require("inquirer");
 
-// clear();
+clear();
 
-const setup = () => {
-  inquirer
-    .prompt([
+inquirer
+  .prompt([
+    {
+      name: "projectName",
+      message: "Qual é o nome do projeto?",
+    },
+    {
+      name: "restApiUrl",
+      message: "Qual é o endpoint da API REST?",
+    },
+    {
+      name: "graphqlApiUrl",
+      message: "Qual é o endpoint da API Graphql?",
+    },
+  ])
+  .then((answers) => {
+    figlet.text(
+      "Sysgaming",
       {
-        name: "projectName",
-        message: "Qual é o nome do projeto?",
+        font: "ANSI Shadow",
+        horizontalLayout: "default",
+        verticalLayout: "default",
+        width: 80,
+        whitespaceBreak: true,
       },
-      {
-        name: "restApiUrl",
-        message: "Qual é o endpoint da API REST?",
-      },
-      {
-        name: "graphqlApiUrl",
-        message: "Qual é o endpoint da API Graphql?",
-      },
-    ])
-    .then((answers) => {
-      figlet.text(
-        "Sysgaming",
-        {
-          font: "ANSI Shadow",
-          horizontalLayout: "default",
-          verticalLayout: "default",
-          width: 80,
-          whitespaceBreak: true,
-        },
 
-        function (err, data) {
-          if (err) {
-            console.log("😵 Ops.. algo saiu mal.");
-            return;
-          }
-
-          console.log(chalk.blue(data));
-
-          console.log("Nome do projeto:", chalk.green(answers.projectName));
-          console.log("API REST:", chalk.cyan(answers.restApiUrl));
-          console.log("API Graphql:", chalk.magenta(answers.restApiUrl));
+      function (err, data) {
+        if (err) {
+          console.log("😵 Ops.. algo saiu mal.");
+          return;
         }
-      );
-    });
-};
 
-setup();
+        console.log(data);
+
+        // console.log(chalk.blue(data));
+
+        // console.log("Nome do projeto:", chalk.green(answers.projectName));
+        // console.log("API REST:", chalk.cyan(answers.restApiUrl));
+        // console.log("API Graphql:", chalk.magenta(answers.restApiUrl));
+      }
+    );
+  });
